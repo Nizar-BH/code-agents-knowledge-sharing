@@ -19,7 +19,8 @@ src/
 ├── memory_and_tools/
 │   ├── agent_with_tools.py    # Agent with web search (Tavily)
 │   ├── agent_with_stm.py      # Short-term memory (in-memory)
-│   └── agent_with_ltm.py      # Long-term memory (SQLite)
+│   ├── agent_with_ltm.py      # Long-term memory (SQLite)
+│   └── file_search_tool.py    # File search tool implementation
 └── react_agent/
     └── agent_llamaindex.py    # ReAct agent with LlamaIndex
 ```
@@ -42,7 +43,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 
 ```bash
 # Navigate to project directory
-cd code_agents_knowledge_sharing_migrated
+cd code-agents-knowledge-sharing
 
 # Sync dependencies (creates virtual environment automatically)
 uv sync
@@ -88,11 +89,6 @@ ollama pull qwen3:8b
 All commands should be run from the project root directory.
 
 ### Multi-Agent Systems
-
-**Sequential Coordination (Meal Planning):**
-```bash
-uv run python -m src.mas.coordinate
-```
 
 **Investment Strategy Team (4 agents):**
 ```bash
